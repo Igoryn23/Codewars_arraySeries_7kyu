@@ -38,3 +38,25 @@ var arrayLeaders = numbers => {
 }
 
 arrayLeaders([1, 2, 3, 4, 0]);
+
+// Sort Out The Men From Boys
+
+function menFromBoys(arr) {
+    let even = [];
+    let odd = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2) {
+            odd.push(arr[i]);
+        } else {
+            even.push(arr[i]);
+        }
+    }
+    even.sort(function(a, b) {
+        return a - b;
+    })
+    odd.sort(function(a, b) {
+        return b - a;
+    })
+    let total = even.concat(odd);
+    return [...new Set(total)];
+}
