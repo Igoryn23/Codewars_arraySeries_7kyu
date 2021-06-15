@@ -22,7 +22,6 @@ minSum([5, 4, 2, 3]);
 // An element is leader if it is greater than The Sum all the elements to its right side.
 // Given an array/list [] of integers , Find all the LEADERS in the array.
 
-
 var arrayLeaders = numbers => {
     let arr = [];
     let sumTemp = 0;
@@ -39,3 +38,21 @@ var arrayLeaders = numbers => {
 }
 
 arrayLeaders([1, 2, 3, 4, 0]);
+
+// Row Weights
+// Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+function rowWeights(array) {
+    let first = 0;
+    let second = 0;
+    let res = [];
+    for (let i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            first += array[i];
+        } else {
+            second += array[i];
+        }
+    }
+    res.push(first, second);
+    return res;
+}
+rowWeights([50, 60, 70, 80]);
