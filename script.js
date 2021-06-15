@@ -56,3 +56,20 @@ function rowWeights(array) {
     return res;
 }
 rowWeights([50, 60, 70, 80]);
+
+// Maximum Gap (Array Series #4)
+//  Given an array/list [] of integers , Find The maximum difference between the successive elements in its sorted form.
+function maxGap(numbers) {
+    numbers.sort(function(a, b) {
+        return a - b;
+    })
+    let temp = numbers[1] - numbers[0];
+    console.log(temp);
+    for (let i = 1; i < numbers.length; i++) {
+        if ((numbers[i + 1] - numbers[i]) > temp) {
+            temp = (numbers[i + 1] - numbers[i]);
+        }
+    }
+    return temp;
+}
+maxGap();
