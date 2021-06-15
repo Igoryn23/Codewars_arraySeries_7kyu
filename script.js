@@ -18,6 +18,7 @@ function minSum(arr) {
 
 minSum([5, 4, 2, 3]);
 
+// Array Leaders (Array Series #3)
 // An element is leader if it is greater than The Sum all the elements to its right side.
 // Given an array/list [] of integers , Find all the LEADERS in the array.
 
@@ -38,25 +39,3 @@ var arrayLeaders = numbers => {
 }
 
 arrayLeaders([1, 2, 3, 4, 0]);
-
-// Sort Out The Men From Boys
-
-function menFromBoys(arr) {
-    let even = [];
-    let odd = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2) {
-            odd.push(arr[i]);
-        } else {
-            even.push(arr[i]);
-        }
-    }
-    even.sort(function(a, b) {
-        return a - b;
-    })
-    odd.sort(function(a, b) {
-        return b - a;
-    })
-    let total = even.concat(odd);
-    return [...new Set(total)];
-}
