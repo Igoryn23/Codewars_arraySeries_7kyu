@@ -73,3 +73,22 @@ function maxGap(numbers) {
     return temp;
 }
 maxGap();
+
+// Minimum Steps (Array Series #6)
+// Given an array of N integers, you have to find how many times you have to add up the smallest numbers in the array until their Sum becomes greater or equal to K.
+
+function minSteps(numbers, value) {
+    let sum = 0;
+    // sort
+    numbers.sort(function(a, b) {
+            return a - b;
+        })
+        // само решение 
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+        if (sum >= value) {
+            return i;
+        }
+    }
+}
+minSteps([4, 1, 3, 2, 8], 10);
